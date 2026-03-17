@@ -1,6 +1,7 @@
 from django.urls import path
 from users import views as UserViews
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from products import views as ProductViews
 
 urlpatterns = [
     path('register/', UserViews.RegisterView.as_view()),
@@ -11,5 +12,8 @@ urlpatterns = [
     path('profile/', UserViews.ProfileView.as_view()),
     
     # product API's
-    
+    #product list (all)
+    path('products/', ProductViews.ProductListView.as_view()),
+    #product detail (one)
+    path('products/<int:pk>/', ProductViews.ProductDetailView.as_view()),
 ]
