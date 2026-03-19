@@ -4,6 +4,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from carts.models import Cart, CartItem
 from .models import Order, OrderItem
+from .serializers import OrderSerializer
+from rest_framework import status
 
 
 class PlaceOrderView(APIView):
@@ -25,9 +27,22 @@ class PlaceOrderView(APIView):
         )
         
         # create order items
+        for item in cart.items.all():
+            OrderItem.objects.create(
+                order = order,
+                product = item.product,
+                quantity = item.quantity,
+                price = item.product.price,
+                total_price = item.total_price
+            )
+            
         
         # clear the cart items
+        cart.items.all().delete()
+        cart.save()
         
         # send the notification email
         
         # send the response to frontend
+        serializer = OrderSerializer(order)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
