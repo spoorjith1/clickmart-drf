@@ -11,22 +11,8 @@ class CartItemSerializer(serializers.ModelSerializer):
         
 class CartSerializer(serializers.ModelSerializer):
     items = CartItemSerializer(many=True)
-    subtotal = serializers.SerializerMethodField() #this gonna bring the get_subtotal() method
-    total = serializers.SerializerMethodField()
+    subtotal = serializers.DecimalField(max_digits=10, decimal_places=2, read_only=True)
+    grand_total = serializers.DecimalField(max_digits=10, decimal_places=2, read_only=True)
     class Meta:
         model = Cart
         fields = "__all__"
-        
-    def get_subtotal(self, obj): # here obj means Cart model instance
-        subtotal = 0
-        for item in obj.items.all(): # here items is the related name of cart from CartItem class in models
-            subtotal = subtotal + item.product.price * item.quantity
-        return subtotal
-    
-    def get_total(self, obj):
-        total = 0
-        for item in obj.items.all():
-            subtotal = item.product.price * item.quantity
-            tax = subtotal * (item.product.tax_percent/100)
-            total += subtotal + tax
-        return total
