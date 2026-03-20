@@ -30,4 +30,7 @@ urlpatterns = [
     
     # order api
     path('order/place/', OrderViews.PlaceOrderView.as_view()),
+    
+    # user to see his orders
+    path('orders/', OrderViews.MyOrdersView.as_view()),
 ]

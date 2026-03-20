@@ -6,7 +6,8 @@ from carts.models import Cart, CartItem
 from .models import Order, OrderItem
 from .serializers import OrderSerializer
 from rest_framework import status
-
+from .utils import send_order_notification
+from rest_framework.generics import ListAPIView
 
 class PlaceOrderView(APIView):
     # the user be logged in
@@ -42,7 +43,16 @@ class PlaceOrderView(APIView):
         cart.save()
         
         # send the notification email
+        send_order_notification(order)
         
         # send the response to frontend
         serializer = OrderSerializer(order)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class MyOrdersView(ListAPIView):
+    permission_classes = [IsAuthenticated]
+    serializer_class = OrderSerializer
+    
+    def get_queryset(self):
+        return Order.objects.filter(user=self.request.user)
