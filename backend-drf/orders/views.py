@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -7,7 +7,7 @@ from .models import Order, OrderItem
 from .serializers import OrderSerializer
 from rest_framework import status
 from .utils import send_order_notification
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 class PlaceOrderView(APIView):
     # the user be logged in
@@ -33,6 +33,18 @@ class PlaceOrderView(APIView):
             zip_code = shipping_address.get("zipCode"),
         )
         
+        # loop through the cart items
+        for item in cart.items.all():
+            product = item.product
+            
+            # check quantity
+            if product.stock < item.quantity:
+                return Response({"details" : f"Only {product.stock} is left for {product.name}"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            # decrease the product quantity
+            product.stock -= item.quantity
+            product.save()
+        
         # create order items
         for item in cart.items.all():
             OrderItem.objects.create(
@@ -42,7 +54,6 @@ class PlaceOrderView(APIView):
                 price = item.product.price,
                 total_price = item.total_price
             )
-            
         
         # clear the cart items
         cart.items.all().delete()
@@ -62,3 +73,13 @@ class MyOrdersView(ListAPIView):
     
     def get_queryset(self):
         return Order.objects.filter(user=self.request.user)
+
+
+class OrderDetailView(RetrieveAPIView):
+    permission_classes = [IsAuthenticated]
+    serializer_class = OrderSerializer
+    
+    def get_object(self):
+        pk = self.kwargs.get('pk')
+        order = get_object_or_404(Order, pk=pk, user=self.request.user)
+        return order
