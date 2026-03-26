@@ -4,20 +4,20 @@ export default function Footer() {
       <p className="flex flex-col items-center gap-1">
         Developed with <span className="text-red-500">❤️</span> by{" "}
         <a
-          href="https://www.linkedin.com/in/rathan-kumar492"
+          href="https://www.linkedin.com/in/spoorjith-malebalu-3545763b0/"
           target="_blank"
           className="text-blue-600 hover:underline"
         >
-          Rathan Kumar
+          Spoorjith Malebalu
         </a>
       </p>
 
       <div className="flex flex-col items-center gap-1 mt-2">
         <a
-          href="mailto:developer.rathan@gmail.com"
+          href="mailto:spoorjithchiru@gmail.comm"
           className="text-blue-600 hover:underline"
         >
-          developer.rathan@gmail.com{" "}
+          spoorjithchiru@gmail.com{" "}
         </a>
 
         <span className="flex items-center gap-1 text-gray-500 text-sm">
