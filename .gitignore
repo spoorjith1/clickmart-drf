@@ -175,3 +175,4 @@ cython_debug/
 
 backend-drf/.env.production
 backend-drf/.env.docker
+nginx/default.conf
