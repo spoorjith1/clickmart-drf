@@ -179,5 +179,3 @@ CORS_ALLOWED_ORIGINS = [
     'http://clickmartsp.shop',
     'https://clickmartsp.shop'
 ]
-
-CSRF_TRUSTED_ORIGINS = os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",")
