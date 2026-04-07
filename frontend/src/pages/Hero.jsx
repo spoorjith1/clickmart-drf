@@ -12,10 +12,10 @@ const Hero = () => {
         <div className="row align-items-center">
           <div className="col-lg-6 fade-in">
             <h1 className="display-4 fw-bold mb-4">
-              Discover Amazing Tech Products
+              Discover Various Fruits, Vegetables and many More...
             </h1>
             <p className="lead mb-4">
-              Find the latest gadgets and accessories at unbeatable prices.
+              Find the fresh and natural food items at unbeatable prices.
               Quality guaranteed with fast, secure delivery.
             </p>
             <div className="d-flex gap-3">
@@ -35,8 +35,8 @@ const Hero = () => {
           </div>
           <div className="col-lg-6 text-center">
             <img
-              src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="Tech Products"
+              src="https://www.lalpathlabs.com/blog/wp-content/uploads/2019/01/Fruits-and-Vegetables.jpg"
+              alt="hero-img-display"
               className="img-fluid rounded-3 shadow-lg"
               style={{ maxHeight: "400px", objectFit: "cover" }}
             />
