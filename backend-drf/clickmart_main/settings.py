@@ -175,7 +175,9 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
-    'http://45.79.125.155:5173'
+    'http://45.79.125.155:5173',
+    'http://clickmartsp.shop',
+    'https://clickmartsp.shop'
 ]
 
 CSRF_TRUSTED_ORIGINS = os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",")
