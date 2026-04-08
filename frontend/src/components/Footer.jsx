@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="w-full py-4 border-t flex flex-col items-center text-sm text-gray-600 text-center">
       <p className="flex flex-col items-center gap-1">
-        Developed with <span className="text-red-500">❤️</span> by{" "}
+        Developed by{" "}
         <a
           href="https://www.linkedin.com/in/spoorjith-malebalu-3545763b0/"
           target="_blank"
@@ -22,7 +22,7 @@ export default function Footer() {
 
         <span className="flex items-center gap-1 text-gray-500 text-sm">
           <i className="bi bi-geo-alt-fill" style={{ fontSize: "20px" }}></i>
-          Mumbai, India
+          Telangana, India
         </span>
       </div>
     </footer>
