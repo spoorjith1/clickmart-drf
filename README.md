@@ -4,7 +4,11 @@ Built using RESTful APIs with Django REST Framework and Frontend usinf React.js,
 where users can view products, after logging in users can add products to cart, remove products from cart, proceed to purchase and can see order status and orders history from users dashboard.
 
 ## Screenshots
-<img />
+<img src="screenshots/clickmart1.png" width="600" />
+<img src="screenshots/clickmart2.png" width="600" />
+<img src="screenshots/clickmart3.png" width="600" />
+<img src="screenshots/clickmart4.png" width="600" />
+<img src="screenshots/clickmart5.png" width="600" />
 
 ## Features
 - User Registration
@@ -49,6 +53,7 @@ where users can view products, after logging in users can add products to cart, 
 - EMAIL_HOST_USER=
 - EMAIL_HOST_PASSWORD=
 
+
 ### .env.docker file :
 - SECRET_KEY=
 - DEBUG=
@@ -66,6 +71,7 @@ where users can view products, after logging in users can add products to cart, 
 - EMAIL_HOST_PASSWORD=
 
 - CSRF_TRUSTED_ORIGINS=
+
 
 ### .env.production file :
 - POSTGRES_DB=
