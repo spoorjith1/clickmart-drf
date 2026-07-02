@@ -1,9 +1,12 @@
 # ClickMart DRF
+ClickMart DRF is a e-commerce project.
+Built using RESTful APIs with Django REST Framework and Frontend usinf React.js, inspired by online-shopping sites.
+where users can view products, after logging in users can add products to cart, remove products from cart, proceed to purchase and can see order status and orders history from users dashboard.
 
-ClickMart DRF is a backend e-commerce REST API built with Django REST Framework, inspired by Amazon-like shopping flow.
+## Screenshots
+<img />
 
 ## Features
-
 - User Registration
 - JWT Authentication (Login / Refresh Token)
 - User Profile API
@@ -18,15 +21,53 @@ ClickMart DRF is a backend e-commerce REST API built with Django REST Framework,
 - Email Notification on Order Placement
 
 ## Tech Stack
-
 ### Backend
 - Python
 - Django
 - Django REST Framework
 - PostgreSQL
-- Simple JWT
+- Simple JWT Authentication
 
-### Frontend (for testing)
-- React
+### Frontend
+- React.js
 - JavaScript
 - CSS
+
+## Environment Variables used in this project for DB config and production config
+### .env file :
+SECRET_KEY=
+DEBUG=
+
+#Database Settings
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+
+#email sending
+EMAIL_HOST_USER=
+EMAIL_HOST_PASSWORD=
+
+### .env.docker file :
+SECRET_KEY=
+DEBUG=
+ALLOWED_HOSTS=
+
+#Database Settings
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+
+#email sending
+EMAIL_HOST_USER=
+EMAIL_HOST_PASSWORD=
+
+CSRF_TRUSTED_ORIGINS=
+
+### .env.production file :
+POSTGRES_DB=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
