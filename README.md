@@ -35,39 +35,39 @@ where users can view products, after logging in users can add products to cart, 
 
 ## Environment Variables used in this project for DB config and production config
 ### .env file :
-SECRET_KEY=
-DEBUG=
+- SECRET_KEY=
+- DEBUG=
 
 #Database Settings
-DB_NAME=
-DB_USER=
-DB_PASSWORD=
-DB_HOST=
-DB_PORT=
+- DB_NAME=
+- DB_USER=
+- DB_PASSWORD=
+- DB_HOST=
+- DB_PORT=
 
 #email sending
-EMAIL_HOST_USER=
-EMAIL_HOST_PASSWORD=
+- EMAIL_HOST_USER=
+- EMAIL_HOST_PASSWORD=
 
 ### .env.docker file :
-SECRET_KEY=
-DEBUG=
-ALLOWED_HOSTS=
+- SECRET_KEY=
+- DEBUG=
+- ALLOWED_HOSTS=
 
 #Database Settings
-DB_NAME=
-DB_USER=
-DB_PASSWORD=
-DB_HOST=
-DB_PORT=
+- DB_NAME=
+- DB_USER=
+- DB_PASSWORD=
+- DB_HOST=
+- DB_PORT=
 
 #email sending
-EMAIL_HOST_USER=
-EMAIL_HOST_PASSWORD=
+- EMAIL_HOST_USER=
+- EMAIL_HOST_PASSWORD=
 
-CSRF_TRUSTED_ORIGINS=
+- CSRF_TRUSTED_ORIGINS=
 
 ### .env.production file :
-POSTGRES_DB=
-POSTGRES_USER=
-POSTGRES_PASSWORD=
+- POSTGRES_DB=
+- POSTGRES_USER=
+- POSTGRES_PASSWORD=
